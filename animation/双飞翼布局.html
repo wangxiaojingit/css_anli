@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双飞翼布局</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        /*让middle，left，right 都浮动，middle 宽度占100%；
+           left 想要占到左边，需要margin-left：-100%；
+           right 想要占到右边，需要margin-left：-200px(右边盒子自身的宽度);
+           中间的部分，要想在中间，用margin:200px auto; 就会抛去margin值，占满剩下的宽度。
+        */
+
+
+        /*
+          圣杯布局和双飞翼布局的区别：圣杯布局主要是外面的main盒子用了padding，然后三个盒子都浮动，再利用负值，再结合相对定位进行位移
+
+          双飞翼布局，主要是利用middle、left、right都浮动，middle 宽度：100%；里面添加了middle_inner :200px auto; 然后就自动占了中间，
+          left，right盒子直接用margin-left 负值就可以达到。
+
+
+        */
+        .main>div{
+            float:left;
+            height:400px;
+        }
+        .middle{
+            width:100%;
+            /*background:pink;*/
+        }
+        .middle_inner{
+            margin:0 210px;
+            background:gold;
+            height:400px;
+        }
+        .left{
+            width:200px;
+            background:green;
+            margin-left:-100%;
+        }
+        .right{
+            width:200px;
+            background:darkcyan;
+            margin-left:-200px;
+        }
+    </style>
+</head>
+<body>
+   <div class="main">
+       <div class="middle">
+           <div class="middle_inner">中间</div>
+       </div>
+       <div class="left">左</div>
+       <div class="right">右</div>
+   </div>
+</body>
+</html>

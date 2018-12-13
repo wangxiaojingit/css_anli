@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     /*
+     利用的思想:改变li 的宽度
+      1、尝试float，但是发现不可行，因为宽度不够的时候，那个box图片盒子会立马掉下去，所以不会有完整的过渡效果，所以必须用定位
+      2、当我们鼠标滑上一个li的时候，它后面的li不能动
+      3、布局思想：默认状态我们让li的宽度为a的宽度：62px，让box相对li绝对定位，定位在right部位，a盒子也要浮动，始终在li的右边
+     */
+
+
+
+        *{margin:0;padding:0}
+        ul,li,ol{
+          list-style: none;
+        }
+        ul{
+          width:762px;
+          margin:0 auto;
+          height:230px;
+        }
+        a{text-decoration: none;}
+        li{
+          width:62px;
+          overflow:hidden;
+        }
+        li{
+          float:left;
+          position:relative;
+          height:230px;
+          transition: all .3s;
+
+        }
+        li a{
+          float:right;
+          width:16px;
+          height:228px;
+          border:1px solid #fff;
+          background:#eaf1fa;
+          padding:0 22px;
+          padding-top:16px;
+
+        }
+        li .box{
+           width:390px;
+           height:230px;
+           background:url("image/bg3.jpg") center center no-repeat;
+          position:absolute;
+          right:62px;
+        }
+        li.on{
+          width:452px;
+        }
+        li.on a{
+          border-color:transparent;
+          background:#f5f9ff;
+
+
+        }
+        i{
+          width:16px;
+          margin-left:22px;
+          float:left;
+          padding-top:16px;
+          font-family: normal;
+        }
+    </style>
+</head>
+<body>
+
+      <ul>
+          <li class="on">
+              <a href="">小莫</a>
+              <div class="box"></div>
+          </li>
+        <li class="current">
+          <a href="">小莫</a>
+          <div class="box"></div>
+        </li>
+        <li class="current">
+          <a href="">小莫</a>
+          <div class="box"></div>
+        </li>
+        <li class="current">
+          <a href="">小莫</a>
+          <div class="box"></div>
+        </li>
+        <li class="current">
+          <a href="">小莫</a>
+          <div class="box"></div>
+        </li>
+        <li class="current">
+          <a href="">小莫</a>
+          <div class="box"></div>
+        </li>
+
+      </ul>
+
+</body>
+</html>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script>
+  $(function(){
+      $("ul li").hover(function(){
+          $(this).addClass("on").siblings().removeClass("on")
+      })
+  })
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>珠峰培训css</title>
+    <link rel="icon" href="">
+  <style>
+    .box{
+      width:100px;
+      height:100px;
+      background:green;
+      background: orangered;
+      overflow:hidden;
+    }
+    .computed{
+       width:50px;
+       height:44px;
+       margin:25px auto 0;
+       background:  url("images/xyq.png") no-repeat;
+       background-position:-380px -221px;
+       position:relative;
+    }
+    .box:hover .arrowUl{
+        transform: translateY(-21px);
+        transition: all .5s;
+    }
+    .arrow,.arrow2{
+      width:32px;
+      height:24px;
+      background:  url("images/xyq.png") no-repeat;
+      background-position:-414px -332px;
+      display: block;
+      margin-left: 4px;
+
+    }
+    .arrowbox{
+      width:32px;
+      height:24px;
+      overflow: hidden;
+      position:absolute;
+      left: 9px;
+      top: 5px;
+    }
+    .arrowUl{
+      height:42px;
+
+    }
+  </style>
+
+</head>
+<body>
+   <div class="box">
+       <div class="computed">
+           <div class="arrowbox">
+             <div class="arrowUl">
+               <span class="arrow"></span>
+               <span class="arrow2"></span>
+             </div>
+           </div>
+
+       </div>
+   </div>
+</body>
+</html>

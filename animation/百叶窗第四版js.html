@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百叶窗</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        .clearfix:after{
+            content:"";
+            display: block;
+            height:0;
+            font-size:0;
+            visibility:hidden;
+          clear:both;
+        }
+        .clearfix{
+          *zoom:1;
+        }
+         ul,li,ol{list-style: none;}
+         .main{height:230px;width:749px;margin:0 auto;}
+         ul{
+           width:759px;
+           height:230px;
+         }
+         ul li{
+           float:left;
+           position:relative;
+           width:62px;
+           overflow:hidden;
+           transition: all .3s;
+         }
+
+
+         li.on{
+           width:449px;
+         }
+         li.on a{
+           background:#f5f9ff;
+           border-color:transparent;
+         }
+         .box{
+           width:390px;
+           height:230px;
+           background:url("image/bg3.jpg") center center no-repeat;
+           position:absolute;
+           right:60px;
+           top:0;
+
+         }
+          a{
+            width:60px;
+            height:228px;
+
+            background:#eaf1fa;
+            border: solid 1px red;
+            float:right;
+            position:relative;
+
+
+          }
+         a>i{
+           width:16px;
+           display: block;
+           padding-top: 15px;
+           padding-left:22px;
+         }
+    </style>
+</head>
+<body>
+
+  <div class="main">
+      <ul>
+         <li class="on clearfix">
+           <div class="box"></div>
+           <a href="javascript:;">
+             <i>剑侠客</i>
+           </a>
+         </li>
+        <li class="clearfix">
+          <div class="box"></div>
+          <a href="javascript:;">
+            <i>逍遥生</i>
+          </a>
+        </li>
+        <li class="clearfix">
+          <div class="box"></div>
+          <a href="javascript:;">
+            <i>飞燕女</i>
+          </a>
+        </li>
+        <li class="clearfix">
+          <div class="box"></div>
+          <a href="javascript:;">
+            <i>英女侠</i>
+          </a>
+        </li>
+        <li class="clearfix">
+          <div class="box"></div>
+          <a href="javascript:;">
+            <i>巫蛮儿</i>
+          </a>
+        </li>
+        <li class="clearfix">
+          <div class="box"></div>
+          <a href="javascript:;">
+            <i>晏无师</i>
+          </a>
+        </li>
+      </ul>
+  </div>
+
+  <a href="#">底部</a>
+</body>
+</html>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script>
+  $(function(){
+     $("li").hover(function(){
+        $(this).addClass("on").siblings().removeClass("on")
+     },function(){
+       // $(this).css("transition","all .5s linear")
+     })
+  })
+</script>

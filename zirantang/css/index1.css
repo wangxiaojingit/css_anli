@@ -1,0 +1,24 @@
+body,html,.main{
+    height:100%;
+}
+/*每一行的div*/
+.main>div{
+    height:33.33%;
+}
+/*每一行中的每一个小项*/
+.item{
+    width:33.33%;
+    height:100%;
+    float:left;
+}
+.tr1>.item:nth-child(1){background:pink;}
+.tr1>.item:nth-child(2){background:gold;}
+.tr1>.item:nth-child(3){background:darkcyan;}
+
+.tr2>.item:nth-child(1){background:darkcyan;}
+.tr2>.item:nth-child(2){background:pink;}
+.tr2>.item:nth-child(3){background:gold;}
+
+.tr3>.item:nth-child(1){background:darkgreen;}
+.tr3>.item:nth-child(2){background:deeppink;}
+.tr3>.item:nth-child(3){background:lightgreen;}

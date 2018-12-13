@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>line的动画效果</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+          padding:0;
+          margin:0;
+        }
+        .box{
+          width:100px;
+          height:100px;
+          background:pink;
+          text-align:center;
+          overflow: hidden;
+          margin:100px auto;
+        }
+        .text{
+          width:36px;
+          display:block;
+          margin-top:29px;
+          margin:29px auto 0 auto;
+        }
+        .box:hover{
+          color:red;
+        }
+        .box:hover .text:after{
+           width:100%;
+          /*transform: scale(1);*/
+        }
+      .text:after{
+        content: "";
+        display: block;
+        /*width: 100%;*/
+        width:0;
+        /*transform: scale(0);*/
+        height: 2px;
+        background: red;
+        transition: all .3s;
+        margin:0 auto;
+      }
+    </style>
+
+</head>
+<body>
+   <div class="box">
+      <span class="text">梦幻西游</span>
+   </div>
+</body>
+</html>

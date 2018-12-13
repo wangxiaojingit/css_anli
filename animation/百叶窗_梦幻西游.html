@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>梦话西游的百叶窗的效果</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        .clearfix:after{
+            display: block;
+            content:"";
+            height:0;
+            opacity: 0;
+            font-size:0;
+            clear:both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+        .main{
+            width:600px;
+            height:230px;
+            margin:0 auto;
+            border:1px solid green;
+            margin:100px auto;
+        }
+        ul,li,ol{
+            list-style: none;
+        }
+        .banner{
+            height:230px;
+        }
+        .banner li{
+            float:left;
+            position:relative;
+            transition: all 1s linear;
+            width:52px;
+            height:232px;
+            overflow:hidden;
+        }
+        .banner a{
+            position:absolute;
+            left:0px;
+            top:0px;
+            width:50px;
+            height:230px;
+            border:1px solid red;
+            text-align:center;
+            background: gold;
+        }
+        .banner .box{
+            position:absolute;
+            left:50px;
+            top:0;
+            width:200px;
+            height:230px;
+            background:dodgerblue;
+        }
+
+        li:hover {
+            width:200px;
+
+        }
+        li:hover .box{
+            left:0;
+        }
+        li:hover a{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+     <div class="main">
+         <ul class="banner clearfix">
+             <li class="clearfix">
+                 <div class="box"></div>
+                 <a href="javascript:;">飞燕女</a>
+             </li>
+             <li class="clearfix">
+                 <a href="javascript:;">逍遥生</a>
+                 <!--<div class="box"></div>-->
+             </li>
+             <li class="clearfix">
+                 <a href="javascript:;">英女侠</a>
+                 <!--<div class="box"></div>-->
+             </li>
+             <li class="clearfix">
+                 <a href="javascript:;">剑侠客</a>
+                 <!--<div class="box"></div>-->
+             </li>
+         </ul>
+
+     </div>
+
+
+</body>
+</html>
